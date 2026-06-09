@@ -1,0 +1,19 @@
+services:
+  web:
+    build:
+      context: .
+      target: dev
+    ports:
+      - "3000:3000"
+    volumes:
+      # Monta el código fuente para edición en caliente.
+      - .:/app
+      # Volúmenes anónimos: evitan que el node_modules/.next del host
+      # (inexistente o de otra arquitectura) pisen los del contenedor.
+      - /app/node_modules
+      - /app/.next
+    environment:
+      # Necesario para que el hot-reload detecte cambios de archivos
+      # montados por volumen en macOS/Windows.
+      - WATCHPACK_POLLING=true
+      - NODE_ENV=development
