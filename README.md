@@ -1,4 +1,4 @@
-# Web Singular Quantum AI
+# Web Files Base To Start
 
 Proyecto base con **Next.js 16.2** (App Router + TypeScript) preparado para
 desarrollarse dentro de Docker con volumen montado para edición en caliente.
